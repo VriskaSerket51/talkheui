@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+
+.row{
+    cursor:pointer;
+
+    display:block;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.cell{
+    display: table-cell;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+
+    margin:2px;
+    padding:0;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    vertical-align: middle;
+
+    color:black;
+    font-family: "Black Han Sans", sans-serif;
+    font-size:1.7em;
+
+    user-select: none;
+}
+
+.cell:hover{
+    color:rgb(50, 102, 247);
+}
