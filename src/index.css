@@ -34,3 +34,12 @@
 .cell:hover{
     color:rgb(50, 102, 247);
 }
+
+.cell-cursor{
+    background-color:rgb(255, 214, 214);
+    border-bottom: 5px solid red;
+}
+
+.input{
+    opacity:0.3;
+}
