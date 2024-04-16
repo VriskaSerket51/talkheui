@@ -20,7 +20,12 @@
     "aheui"
   ],
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@generouted/react-router": "^1.19.1",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "hangeul-js": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
