@@ -37,8 +37,8 @@ class Code {
     this.row_cnt = row_cnt;
     this.col_cnt = col_cnt;
     if (code === undefined) {
-      this.code = [...Array(row_cnt)].map<Operation[]>((_x, _i): Operation[] => {
-        return [...Array(row_cnt)].map<Operation>((_y, _j): Operation => new Nothing)
+      this.code = [...Array(row_cnt)].map<Operation[]>((): Operation[] => {
+        return [...Array(row_cnt)].map<Operation>((): Operation => new Nothing)
       });
     }
     else {
@@ -125,7 +125,7 @@ export default function Mainscreen() {
 
     const [current_input_idx, set_current_input_idx] = useState(0);
 
-    function keydownHandler(event) {
+    function keydownHandler(event: React.KeyboardEvent<HTMLInputElement>) {
       setTimeout(() => {
         if (event.key === "Backspace") {
           const new_code = new Code(code.row_cnt, code.col_cnt, code.code);
@@ -133,7 +133,7 @@ export default function Mainscreen() {
             set_cursor(cursor.prev());
             
             set_current_input_idx(0);
-            event.target.value = "";
+            (event.target as HTMLInputElement).value = "";
           }
 
           new_code.set(cursor, new Nothing);
@@ -141,7 +141,7 @@ export default function Mainscreen() {
 
         }
         else {
-          let new_oper: string = event.target.value;
+          let new_oper: string = (event.target as HTMLInputElement).value;
           new_oper = new_oper.slice(current_input_idx);
 
           const new_code = new Code(code.row_cnt, code.col_cnt, code.code);
@@ -195,7 +195,7 @@ export default function Mainscreen() {
   function Cell(data: { code: Code, cursor: Cursor, row_idx: number, col_idx: number }) {
     function cellClickHandler(){
       // TODO : select the desired input
-      document.querySelector("input").focus();
+      document.querySelector("input")!.focus();
 
       // do we have to pass setCursor? idk gg
     }
